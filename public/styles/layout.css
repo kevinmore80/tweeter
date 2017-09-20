@@ -25,9 +25,14 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .container {
-  width: 450px;
-  margin: auto;
-  background: white;
-  margin-top: 140px;
-}
+.container {
+  background-color: #ffffff;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  position: relative;
+  top: 50px;
+  width: 450px; }

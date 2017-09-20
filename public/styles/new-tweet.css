@@ -1,36 +1,70 @@
-.container {
-  padding: 2em;
+.new-tweet {
+  background: #eee;
+  border-radius: 5px;
+  border: 1px solid #111;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-.container .new-tweet {
-  border: 1px solid gray;
-  border-radius: 8px;
-  padding: 1em;
-  padding-top: 0;
-  background: #F5F5F5;
-}
-
-.container .new-tweet .counter {
-  float: right;
-  font-style: italic;
-}
-.container .new-tweet h2 {
-  border-bottom: 1px solid black;
-}
-
-.container .new-tweet form textarea {
+.new-tweet textarea {
+  height: 80px;
+  margin-bottom: 10px;
   width: 100%;
-  padding: 5px;
 }
 
-.container .new-tweet form input[type=submit] {
-  margin-top: 1px;
+.new-tweet h2 {
+  border-bottom: 1px solid #888;
+  margin-top: 0;
+  padding-bottom: 5px;
 }
 
-.container .new-tweet .invalid {
-  color: red;
+.new-tweet .counter {
+  float: right;
 }
 
-.container .new-tweet form span[class=counter] {
-  margin-top: 2px;
+#tweet-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tweet {
+  border-radius: 5px;
+  border: 1px solid #999;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.tweet:hover {
+  border: 1px solid #111;
+  opacity: 1.0;
+}
+
+.tweet-header {
+  background: #eee;
+  border-radius: 5px 5px 0 0;
+  padding-left : 10px;
+  padding-right : 10px;
+}
+
+.tweet-handle {
+  display: inline-block;
+  float: right;
+}
+
+.tweet-name {
+  font-size: 150%;
+  display: inline-block;
+}
+
+.tweet-body {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tweet-footer {
+  border-top: 1px solid #ddd;
+  color: #888;
+  font-weight: 200;
+  font-size: 75%;
+  padding-left: 10px;
 }
