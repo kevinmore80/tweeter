@@ -1,70 +1,113 @@
-.new-tweet {
-  background: #eee;
-  border-radius: 5px;
-  border: 1px solid #111;
-  padding: 10px;
-  margin-bottom: 10px;
+/* For the Underline below Compose Tweet */
+main hr {
+  border:black;
+  width:100%;
+  height:1px;
+  color: black;
+  background-color: black;
 }
 
-.new-tweet textarea {
-  height: 80px;
-  margin-bottom: 10px;
+main section.new-tweet {
+  margin:auto;
+  border: 1px solid black;
+  background-color: #F0ECEC;
+  padding: 5px;
+}
+
+main section input {
+  display: inline;
+}
+
+/* The Character counter */
+main section span {
+  float:right;
+  line-height: 25px;
+}
+main section textarea {
   width: 100%;
-}
 
+}
 .new-tweet h2 {
-  border-bottom: 1px solid #888;
-  margin-top: 0;
-  padding-bottom: 5px;
+  margin: 0px 0px;
 }
 
-.new-tweet .counter {
-  float: right;
+/* To change the character count to red if exceeded */
+.red-text{
+  color:red;
 }
 
-#tweet-container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+/* STYLES FOR CREATING A NEW TWEET */
+
+/* Tweet-Content Styles */
+.tweet-holder {
+  margin-top: 10px;
 }
 
-.tweet {
-  border-radius: 5px;
-  border: 1px solid #999;
-  margin-bottom: 10px;
-  opacity: 0.8;
+.tweet-holder:hover {
+  margin-top: 10px;
+
 }
 
-.tweet:hover {
-  border: 1px solid #111;
-  opacity: 1.0;
+/* Header Styles */
+.tweet-holder header {
+  height: 50px;
+  background-color: white;
 }
 
-.tweet-header {
-  background: #eee;
-  border-radius: 5px 5px 0 0;
-  padding-left : 10px;
-  padding-right : 10px;
+.tweet-holder img {
+  width: 50px;
+  height: 50px;
+  float:left;
 }
 
-.tweet-handle {
-  display: inline-block;
-  float: right;
+.tweet-holder #full-name{
+  float:left;
+  margin: 1px;
 }
 
-.tweet-name {
-  font-size: 150%;
-  display: inline-block;
+.tweet-holder #user-name{
+  float:right;
+  margin: 1px;
+  line-height: 25px;
 }
 
-.tweet-body {
-  padding-left: 10px;
-  padding-right: 10px;
+
+/* Footer Styles */
+
+.tweet-holder footer {
+  height: 40px;
+  /* background-color: #9B8989; */
+  background-color: white;
+  padding:2px;
 }
 
-.tweet-footer {
-  border-top: 1px solid #ddd;
-  color: #888;
-  font-weight: 200;
-  font-size: 75%;
-  padding-left: 10px;
+.tweet-time {
+  font-size: 0.75em;
+  line-height: 20px;
+  display:inline;
+  float:left;
+}
+
+.footer-icons {
+  background-color: pink;
+  padding: 5px;
+  float:right;
+  visibility: hidden;
+}
+
+.footer-icon {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-icon:hover {
+  text-decoration: none;
+  visibility:visible;
+  color: yellow;
+}
+
+.tweet-holder:hover .footer-icons{
+  font-size:20px;
+  float:right;
+  visibility:visible;
 }

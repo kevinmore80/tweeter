@@ -4,77 +4,103 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function(){
-  var initialTweets = [{
-      "user": {
-        "name": "Newton",
-        "avatars": {
-          "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-          "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-          "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-        },
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": {
-          "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-          "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-          "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-        },
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Johann von Goethe",
-        "avatars": {
-          "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-          "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-          "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-        },
-        "handle": "@johann49"
-      },
-      "content": {
-        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-      },
-      "created_at": 1461113796368
-    }
-  ];
+$( ".compose-button" ).click(function() {
+    $( ".container" ).slideToggle( "slow", function() {
+      console.log("Button is being clicked");
+    });
+  });
+function createTweetElement(tweetData) {
+    var tweet = `
+    <article class = "tweet-holder">
+        <header>
+            <img src=${replaceStr(tweetData.user.avatars.regular)} alt="User_Pic">
+            <span id="full-name">${replaceStr(tweetData.user.name)}
+            </span>
+            <section id="user-name">${replaceStr(tweetData.user.handle)}
+            </section>
+        </header>
 
-  function createTweetElement(dataObj) {
-    var $tweet = $("<article>").addClass("tweet");
-    // create header
-    var header = $("<header>").addClass("tweet-header");
-    header.append($("<h3>").addClass("tweet-name").text(dataObj.user.name));
-    header.append($("<p>").addClass("tweet-handle").text(dataObj.user.handle));
-    // create main
-    var main = $("<main>").addClass("tweet-content");
-    main.append($("<p>").addClass("tweet-body").text(dataObj.content.text));
-    // create footer
-    var footer = $("<footer>").addClass("tweet-footer");
-    var date = new Date(dataObj.created_at*1000);
-    footer.append($("<p>").addClass("tweet-timestamp").text(date.toUTCString()));
-    // append
-    $tweet.append(header).append(main).append(footer);
-    return $tweet;
+        <section id="tweet-content">
+        ${replaceStr(tweetData.content.text)}
+        </section>
+
+        <footer>
+            <section class="tweet-time">
+            ${replaceStr(timeCreated(tweetData.created_at))}
+            </section>
+            <section class="footer-icons">
+            <a href="#" class="footer-icon"><i class="fa fa-heart"></i></a>
+            <a href="#" class="footer-icon"><i class="fa fa-link"></i></a>
+            <a href="#" class="footer-icon"><i class="fa fa-flag"></i></a>
+        </section>
+        </footer>
+    </article>
+    `;
+
+    return tweet;
+    //Returns the $tweet object
+}
+function renderTweets(tweetData){
+    $("#tweets-container").html("");
+    for(var i = 0; i < tweetData.length; i++){
+        $("#tweets-container").prepend(createTweetElement(tweetData[i]));
+    }
+    // console.log("Tweets have been rendered");
+    // console.log(tweetData.length);
   }
 
-  function renderTweets(tweets) {
-    tweets.forEach(function(userObj){
-      var $tweet = createTweetElement(userObj);
-      $('#tweet-container').append($tweet);
+//The escape function to prevent XSS
+function replaceStr(str) {
+    var toReplace = document.createElement('div');
+    toReplace.appendChild(document.createTextNode(str));
+    return toReplace.innerHTML;
+  }
+
+function timeCreated(givenTime) {
+    var timeSinceThen = Date.now()-givenTime;
+    if(timeSinceThen < 10000000){
+      return "Created " + Math.floor((timeSinceThen / 100000)) + " mins ago";
+    } else {
+      return "Created a while back";
+    }
+}
+
+function loadTweets() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: 'JSON',
+      success: function (data){
+        renderTweets(data);
+      }
     })
   }
 
-  renderTweets(initialTweets);
+loadTweets();
+
+//Creating a POST request using Ajax
+$(document).ready(function () {
+    var newTweet = document.getElementById("submit-tweet");
+    newTweet.addEventListener('click', function(){
+        var helloTweet = document.getElementById("tweet-text");
+        var tweetText = helloTweet.value;
+        event.preventDefault();
+        var path = this.parentElement.parentElement;
+
+        var str = $(path).serialize();
+        // console.log(str);
+        if(tweetText === "") {
+            alert('Empty Tweet!');
+        } else if(tweetText.length > 140) {
+            alert('Tweet is too long!');
+        } else {
+                $.ajax({
+                url: "/tweets",
+                method: 'POST',
+                data: str,
+                success: loadTweets(),
+                });
+            }
+
+    });
 });
