@@ -1,70 +1,144 @@
-.new-tweet {
-  background: #eee;
-  border-radius: 5px;
-  border: 1px solid #111;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.new-tweet textarea {
-  height: 80px;
-  margin-bottom: 10px;
+/* For the Underline below Compose Tweet */
+main hr {
+  border: #F5F7F7;
   width: 100%;
+  height: 1px;
+  color: #F5F7F7;
+  background-color: #F5F7F7;
 }
 
-.new-tweet h2 {
-  border-bottom: 1px solid #888;
-  margin-top: 0;
-  padding-bottom: 5px;
-}
-
-.new-tweet .counter {
-  float: right;
-}
-
-#tweet-container {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.tweet {
+main section.new-tweet {
+  margin: auto;
+  border: 1px solid #F5F7F7;
+  background-color: #F5F7F7;
+  padding: 8px 10px;
   border-radius: 5px;
-  border: 1px solid #999;
-  margin-bottom: 10px;
-  opacity: 0.8;
 }
 
-.tweet:hover {
-  border: 1px solid #111;
-  opacity: 1.0;
+main section input {
+  display: inline;
 }
 
-.tweet-header {
-  background: #eee;
-  border-radius: 5px 5px 0 0;
-  padding-left : 10px;
-  padding-right : 10px;
+/* The Character counter */
+main section span {
+  float:right;
+  line-height: 25px;
+}
+main section textarea {
+  height: 80px;
+  width: 100%;
+  border: 1px solid #F5F7F7;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+.new-tweet h2 {
+  margin: 0px 0px;
 }
 
-.tweet-handle {
-  display: inline-block;
+/* Red Character Counter after 140 characters */
+.red-text{
+  color:red;
+}
+
+/* New Tweets */
+
+#submit-tweet {
+  background: #79c5ec;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.tweet-holder {
+  margin-top: 10px;
+  border: 1px solid #F5F7F7;
+}
+
+.tweet-holder:hover {
+  margin-top: 10px;
+
+}
+
+
+/* Header Styles */
+.tweet-holder header {
+  height: 50px;
+  background-color: #F5F7F7;
+}
+
+.tweet-holder img {
+  width: 50px;
+  height: 50px;
+  float:left;
+}
+
+.tweet-holder #full-name{
+  float:left;
+  margin: 1px 5px;
+  line-height: 50px;
+}
+
+.tweet-holder:hover #full-name{
+  float:left;
+  margin: 1px;
+  font-weight:bold;
+}
+
+
+.tweet-holder #user-name{
+
+  margin: 2px 5px;
   float: right;
+  line-height: 50px;
 }
 
-.tweet-name {
-  font-size: 150%;
-  display: inline-block;
+
+/* Footer Styles */
+
+.tweet-holder footer {
+  height: 40px;
+  background-color: white;
+  padding:2px;
+  border-top: 1px solid #F5F7F7;
+  margin: 0 15px;
 }
 
-.tweet-body {
-  padding-left: 10px;
-  padding-right: 10px;
+.tweet-time {
+  font-size: 0.75em;
+  display:inline;
+  float:left;
+  line-height: 40px;
 }
 
-.tweet-footer {
-  border-top: 1px solid #ddd;
-  color: #888;
-  font-weight: 200;
-  font-size: 75%;
-  padding-left: 10px;
+.footer-icons {
+  padding: 5px;
+  float:right;
+  visibility: hidden;
+}
+
+.footer-icon {
+  text-decoration: none;
+  color: #79c5ec;
+}
+
+.footer-icon:hover {
+  text-decoration: none;
+  visibility:visible;
+  color: rgba(12, 110, 175, 0.96);
+}
+
+.tweet-holder:hover .footer-icons{
+  font-size:20px;
+  float:right;
+  visibility:visible;
+}
+
+/* Text Styles */
+
+#tweet-content {
+  margin: 20px 15px;
 }

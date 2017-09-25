@@ -10,10 +10,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   margin: 0;
   color: #244751;
@@ -21,18 +17,23 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main {
+  width: 500px;
+  background-color: white;
+  padding: 100px 2em;
+  margin: auto;
+  background-color: #fdfdfd;
+ }
 
-.container {
-  background-color: #ffffff;
-  height: 100%;
-  margin: 0 auto;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 3em;
-  padding-bottom: 1em;
-  position: relative;
-  top: 50px;
-  width: 450px; }
+ .container .tweet-form h6 {
+   color:red;
+   display:inline;
+   margin-left: 10px;
+   font-size: 15px;
+   font-weight: 300;
+ }
+
+
+ .compose-button .compose-text {
+   vertical-align: middle;
+ }

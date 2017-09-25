@@ -22,21 +22,10 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
-<!--     <script>
-      $(document).ready(function(){
-        $("#nav-bar .compose").click(function(){
-          $(".container .new-tweet").toggle("slow");
-            $(".container .new-tweet textarea").focus();
-        });
-      });
-    </script> -->
 
   </head>
 
@@ -44,25 +33,39 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png">
+      <img class="logo" src="images/bird.png">
       <span class="header">Tweeter</span>
+      <button class="compose-button">
+        <span class = "compose-text">Compose</span>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <!-- Create a tweet -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/" enctype="application/x-www-form-urlencoded">
-          <textarea id="tweetPlaceholder" name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
+        <h2>Compose Tweet</h2><hr/>
+        <form action ="/tweets" method="POST">
+          <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
+          <div class = "tweet-form">
+            <input type="submit" value="Tweet" id="submit-tweet">
+            <h6 id="error-msg"></h6>
+            <span class="counter" id="no-of-chars">140</span>
+          </div>
         </form>
       </section>
 
-      <section id="tweet-container">
-      </section>
-
+      <article id="tweets-container">
+      </article>
     </main>
+
+    <script>
+      $( "button" ).click(function() {
+        $( ".new-tweet" ).slideToggle( "slow", function() {
+          $('textarea').focus();
+        });
+      });
+    </script>
+
   </body>
 </html>
