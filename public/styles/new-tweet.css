@@ -1,21 +1,5 @@
 /* For the Underline below Compose Tweet */
 main hr {
-<<<<<<< HEAD
-  border:black;
-  width:100%;
-  height:1px;
-  color: black;
-  background-color: black;
-}
-
-main section.new-tweet {
-  margin:auto;
-  border: 1px solid black;
-  background-color: #F0ECEC;
-  padding: 5px;
-}
-
-=======
   border: #F5F7F7;
   width: 100%;
   height: 1px;
@@ -31,7 +15,6 @@ main section.new-tweet {
   border-radius: 5px;
 }
 
->>>>>>> feature/mongodb
 main section input {
   display: inline;
 }
@@ -42,39 +25,22 @@ main section span {
   line-height: 25px;
 }
 main section textarea {
-<<<<<<< HEAD
-  width: 100%;
-=======
   height: 80px;
   width: 100%;
   border: 1px solid #F5F7F7;
   border-radius: 5px;
   padding: 10px;
->>>>>>> feature/mongodb
 
 }
 .new-tweet h2 {
   margin: 0px 0px;
 }
 
-<<<<<<< HEAD
-/* To change the character count to red if exceeded */
-=======
 /* Red Character Counter after 140 characters */
->>>>>>> feature/mongodb
 .red-text{
   color:red;
 }
 
-<<<<<<< HEAD
-/* STYLES FOR CREATING A NEW TWEET */
-
-/* Tweet-Content Styles */
-.tweet-holder {
-  margin-top: 10px;
-}
-
-=======
 /* New Tweets */
 
 #submit-tweet {
@@ -92,24 +58,16 @@ main section textarea {
   border: 1px solid #F5F7F7;
 }
 
->>>>>>> feature/mongodb
 .tweet-holder:hover {
   margin-top: 10px;
 
 }
 
-<<<<<<< HEAD
-/* Header Styles */
-.tweet-holder header {
-  height: 50px;
-  background-color: white;
-=======
 
 /* Header Styles */
 .tweet-holder header {
   height: 50px;
   background-color: #F5F7F7;
->>>>>>> feature/mongodb
 }
 
 .tweet-holder img {
@@ -120,52 +78,6 @@ main section textarea {
 
 .tweet-holder #full-name{
   float:left;
-<<<<<<< HEAD
-  margin: 1px;
-}
-
-.tweet-holder #user-name{
-  float:right;
-  margin: 1px;
-  line-height: 25px;
-}
-
-
-/* Footer Styles */
-
-.tweet-holder footer {
-  height: 40px;
-  /* background-color: #9B8989; */
-  background-color: white;
-  padding:2px;
-}
-
-.tweet-time {
-  font-size: 0.75em;
-  line-height: 20px;
-  display:inline;
-  float:left;
-}
-
-.footer-icons {
-  background-color: pink;
-  padding: 5px;
-  float:right;
-  visibility: hidden;
-}
-
-.footer-icon {
-  text-decoration: none;
-  color: white;
-}
-
-.footer-icon:hover {
-  text-decoration: none;
-  visibility:visible;
-  color: yellow;
-}
-
-=======
   margin: 1px 5px;
   line-height: 50px;
 }
@@ -219,18 +131,14 @@ main section textarea {
   color: rgba(12, 110, 175, 0.96);
 }
 
->>>>>>> feature/mongodb
 .tweet-holder:hover .footer-icons{
   font-size:20px;
   float:right;
   visibility:visible;
-<<<<<<< HEAD
-=======
 }
 
 /* Text Styles */
 
 #tweet-content {
   margin: 20px 15px;
->>>>>>> feature/mongodb
 }

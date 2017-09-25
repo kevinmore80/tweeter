@@ -13,8 +13,4 @@ $(document).ready(function() {
         }
 
     });
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> feature/mongodb
