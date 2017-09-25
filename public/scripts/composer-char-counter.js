@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
     $('.new-tweet textarea').on('keydown', function() {
         //this points to the textarea DOM object
@@ -13,4 +13,8 @@ $(function() {
         }
 
     });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> feature/mongodb

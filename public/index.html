@@ -20,9 +20,19 @@
     <!-- External JS........ -->
     <script type="text/javascript" src="vendor/jquery-2.2.3.min.js"></script>
 
+<<<<<<< HEAD
     <!-- App JS ........-->
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+=======
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+>>>>>>> feature/mongodb
 
   </head>
 
@@ -46,8 +56,13 @@
           <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
           <div class = "tweet-form">
             <input type="submit" value="Tweet" id="submit-tweet">
+<<<<<<< HEAD
             <h6>Print error message</h6>
             <span class="counter">140</span>
+=======
+            <h6 id="error-msg"></h6>
+            <span class="counter" id="no-of-chars">140</span>
+>>>>>>> feature/mongodb
           </div>
         </form>
       </section>
@@ -58,9 +73,14 @@
 
     <script>
       $( "button" ).click(function() {
+<<<<<<< HEAD
         $( "section" ).slideToggle( "slow", function() {
           $('textarea').focus();
           console.log("Button is being clicked");
+=======
+        $( ".new-tweet" ).slideToggle( "slow", function() {
+          $('textarea').focus();
+>>>>>>> feature/mongodb
         });
       });
     </script>
